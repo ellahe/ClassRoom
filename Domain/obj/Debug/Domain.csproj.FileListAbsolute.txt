@@ -1,0 +1,16 @@
+G:\MyProject\ClassRoom\Domain\bin\Debug\Domain.dll
+G:\MyProject\ClassRoom\Domain\bin\Debug\Domain.pdb
+G:\MyProject\ClassRoom\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+G:\MyProject\ClassRoom\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+G:\MyProject\ClassRoom\Domain\obj\Debug\Domain.dll
+G:\MyProject\ClassRoom\Domain\obj\Debug\Domain.pdb
+G:\MyProject\TestProject\Domain\bin\Debug\Domain.dll
+G:\MyProject\TestProject\Domain\bin\Debug\Domain.pdb
+G:\MyProject\TestProject\Domain\bin\Debug\System.ComponentModel.Annotations.dll
+G:\MyProject\TestProject\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+G:\MyProject\TestProject\Domain\obj\Debug\Domain.csproj.CopyComplete
+G:\MyProject\TestProject\Domain\obj\Debug\Domain.dll
+G:\MyProject\TestProject\Domain\obj\Debug\Domain.pdb
+G:\MyProject\TestProject\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+G:\MyProject\TestProject\Domain\bin\Debug\Infrastructure.dll
+G:\MyProject\TestProject\Domain\bin\Debug\Infrastructure.pdb

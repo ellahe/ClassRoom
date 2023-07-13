@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>fb7a3f08-8f9a-4eb9-b9e0-9f24db13b157</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ApplicationService">
+      <HintPath>..\ApplicationService\bin\Debug\netcoreapp3.1\ApplicationService.dll</HintPath>
+    </Reference>
+    <Reference Include="Domain">
+      <HintPath>..\Domain\bin\Debug\Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure">
+      <HintPath>..\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="InfrastructureImplementation">
+      <HintPath>..\InfrastructureImplementation\bin\Debug\netcoreapp3.1\InfrastructureImplementation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

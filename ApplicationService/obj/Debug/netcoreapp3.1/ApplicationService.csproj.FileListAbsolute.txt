@@ -1,0 +1,14 @@
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.csprojAssemblyReference.cache
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.AssemblyInfoInputs.cache
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.AssemblyInfo.cs
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.csproj.CoreCompileInputs.cache
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\ApplicationService.deps.json
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\ApplicationService.dll
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\ApplicationService.pdb
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\Domain.dll
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\Infrastructure.dll
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\Domain.pdb
+G:\MyProject\TestProject\ApplicationService\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.csproj.CopyComplete
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.dll
+G:\MyProject\TestProject\ApplicationService\obj\Debug\netcoreapp3.1\ApplicationService.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z0Rf0R+lVn5PhUVBbK/WqZK5mUEx3pa2tIot/qp5IwNvWcCaDP4k1LrBoSNpSNR1H/sbN2a57wFo3MGggGrtlg==",
+  "success": true,
+  "projectFilePath": "G:\\MyProject\\ClassRoom\\ApplicationService\\ApplicationService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ella\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ella\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
