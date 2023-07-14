@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ClerkComponent } from './clerks/clerk/clerk.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ClerkComponent,
   ],
   imports: [
     BrowserModule,
