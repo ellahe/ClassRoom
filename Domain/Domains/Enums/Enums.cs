@@ -8,6 +8,5 @@
         Bachelor = 4,
         Master = 8,
         Dectorate = 16
-
     }
 }

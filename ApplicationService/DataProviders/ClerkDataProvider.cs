@@ -1,4 +1,5 @@
-﻿using ApplicationService.DTOS;
+﻿using System.Net;
+using ApplicationService.DTOS;
 using AutoMapper;
 using Domain.Domains;
 using Infrastructure.Repositories;
@@ -14,7 +15,6 @@ namespace ApplicationService.DataProviders
 
     public class ClerkDataProvider : IClerkDataProvider
     {
-
         public ClerkDataProvider(
             IMapper mapper,
             IRepository<ClerkEntity> repository)

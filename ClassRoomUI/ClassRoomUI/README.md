@@ -1,27 +1,39 @@
-# ClassRoomUI
+# CRUD Code Test 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+Please read each note very carefully!
+Feel free to add/change project structure to a clean architecture to your view.
 
-## Development server
+Create a simple CRUD application with Angular that implements the below model:
+```
+Customer {
+	Firstname
+	Lastname
+	DateOfBirth
+	PhoneNumber
+	Email
+	BankAccountNumber
+}
+```
+## Practices and patterns (Must):
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [TDD](https://angular.io/guide/testing) [Wiki](https://en.wikipedia.org/wiki/Test-driven_development)
+- [DDD](https://en.wikipedia.org/wiki/Domain-driven_design)
+- [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development)
+- Clean git commits that shows your work progress.
 
-## Code scaffolding
+### Validations (Must)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- During Create; validate the phone number to be a valid *mobile* number only (You can use [Google LibPhoneNumber](https://github.com/google/libphonenumber) to validate mobile number).
 
-## Build
+- A Valid email and a valid account number must be checked before submitting the form.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Create a Browser local storage in to store list of customers.
 
-## Running unit tests
+- Customers must be unique in database: By `Firstname`, `Lastname` and `DateOfBirth`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Email must be unique in the local storage or memory array
 
-## Running end-to-end tests
+### Delivery (Must)
+- Please clone this repository in a new github repository in private mode and share with ID: `mason-chase` in private mode on github.com, make sure you do not erase my commits and then create a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (code review).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Crud-Test
