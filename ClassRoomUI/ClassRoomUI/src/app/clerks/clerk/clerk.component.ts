@@ -8,29 +8,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ClerkComponent implements OnInit {
 
-  addCustomerForm: FormGroup = new FormGroup({});
+  addClerkForm: FormGroup = new FormGroup({});
 
   constructor() { }
 
   ngOnInit(): void {
-    this.addCustomerForm = new FormGroup({
-      firstname: new FormControl(''),
-      lastname: new FormControl(''),
-      dateOfBirth: new FormControl(''),
+    this.addClerkForm = new FormGroup({
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      userName : new FormControl('', [Validators.required]),
+      password : new FormControl('', [Validators.required]),
       phoneNumber: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      bankAccountNumber: new FormControl(''),
+      email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 
 get email(){
-  return this.addCustomerForm.controls['email'];
+  return this.addClerkForm.controls['email'];
 }
 
   onSubmit() {
-    if (this.addCustomerForm.valid) {
-      console.log(this.addCustomerForm.value);
-      this.addCustomerForm.reset();
+    if (this.addClerkForm.valid) {
+      console.log(this.addClerkForm.value);
+      this.addClerkForm.reset();
       alert('Successful');
     }
     else
