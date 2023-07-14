@@ -1,1 +1,48 @@
-<p>clerk works!</p>
+<form [formGroup]="addCustomerForm" (ngSubmit)="onSubmit()">
+
+    <div  class="div-field">
+        <label  class="label-field" for="firstname">First Name </label>
+        <input class="input-field" type="text"  formControlName="firstname">
+    </div>
+    <div  class="div-field">
+        <label class="label-field" for="lastname">Last Name </label>
+        <input  class="input-field" type="text"  formControlName="lastname">
+    </div>
+
+    <div  class="div-field">
+        <label class="label-field" for="phoneNumber">PhoneNumber </label>
+        <input  class="input-field" type="text"  formControlName="phoneNumber">
+        <div *ngIf="addCustomerForm.get('phoneNumber')?.touched">
+        <div *ngIf="addCustomerForm?.get('phoneNumber')?.invalid">
+            <span class="text-error">Required</span>
+        </div>
+    </div>
+
+    <div  class="div-field">
+        <label class="label-field" for="userName">userName </label>
+        <input  class="input-field" type="text"  formControlName="userName">
+    </div>
+
+    <div  class="div-field">
+        <label class="label-field" for="password">password </label>
+        <input  class="input-field" type="password"  formControlName="password">
+    </div>
+
+    </div>
+    <div  class="div-field">
+        <label class="label-field" for="email">Email </label>
+        <input   class="input-field" type="text"  formControlName="email"> 
+        <div *ngIf="addCustomerForm.get('email')?.touched">
+            <div *ngIf=" addCustomerForm.get('email')?.invalid">
+                <span class="text-error">Invalid</span>
+            </div>
+            <div *ngIf="email?.duplicateEmail">
+                <span class="text-error">duplicateEmail</span>
+            </div>
+        </div>
+            
+    </div>
+
+
+    <button  class="div-field" [disabled]="addCClerkForm?.invalid" type="submit">Save</button>
+</form>

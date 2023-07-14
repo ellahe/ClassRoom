@@ -1,8 +1,11 @@
-export interface ClerkDTO {
-    firstName : string;
-    lastName  : string;
-    email : string;
-    userName : string;
-    password: string;
-    MmbileNumber : string;
+export class ClerkDTO {
+
+    constructor(
+    firstName : string,
+    lastName  : string,
+    userName : string,
+    password: string,
+    email : string,
+    mmbileNumber : string)
+    {}
 }
