@@ -4,9 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [MatButtonModule, MatMenuModule],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'ClassRoom';
