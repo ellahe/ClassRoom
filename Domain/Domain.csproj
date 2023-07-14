@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domains\ClerkEntity.cs" />
     <Compile Include="Domains\Enums\Enums.cs" />
     <Compile Include="Domains\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

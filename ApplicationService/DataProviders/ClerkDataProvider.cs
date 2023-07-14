@@ -1,6 +1,6 @@
 ﻿using ApplicationService.DTOS;
 using AutoMapper;
-using Infrastructure.Entities;
+using Domain.Domains;
 using Infrastructure.Repositories;
 
 namespace ApplicationService.DataProviders

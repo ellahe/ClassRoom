@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Domain.Domains;
 
-namespace Infrastructure.Entities
+namespace Domain.Domains
 {
     public class ClerkEntity : Entity
     {

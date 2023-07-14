@@ -21,13 +21,10 @@ namespace ClassRoom.Controllers
             _clerkDataProvider.Add(clerk);
         }
 
-
         [HttpGet("Get")]
         public ClerkDTO Get(long id)
         {
             return _clerkDataProvider.Get(id);
         }
-
-
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Infrastructure.Entities;
+using Domain.Domains;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;

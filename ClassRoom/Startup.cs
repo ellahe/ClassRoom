@@ -6,7 +6,6 @@ using ApplicationService.DTOS;
 using ApplicationService.Users;
 using AutoMapper;
 using Domain.Domains;
-using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using InfrastructureImplementation.Authentications;
