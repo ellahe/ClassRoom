@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { ClerkDTO } from 'src/app/DTOS/clerk-dto';
 import { Observable } from 'rxjs';
 
-
 const baseUrl = "https://localhost:44325/api/";
 
 @Injectable({
@@ -11,7 +10,6 @@ const baseUrl = "https://localhost:44325/api/";
 })
 
 export class ClerkService {
-  
 
   constructor(private http: HttpClient) { }
 
