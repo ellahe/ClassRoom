@@ -32,7 +32,7 @@ get email(){
     if (this.clerkForm.valid) {
       var clerkID= this.clerkService.add(this.clerkForm.value).subscribe();
       console.log(this.clerkService.get(1).subscribe());
-      //this.clerkForm.reset();
+      this.clerkForm.reset();
       alert('Successful');
     }
     else
