@@ -26,7 +26,6 @@ namespace ClassRoom
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
@@ -41,10 +40,6 @@ namespace ClassRoom
                                         .AllowAnyMethod();
                 });
             });
-
-            // UseCors
-
-           
 
             ConfigureContext(services);
             AddScope(services);
@@ -63,23 +58,6 @@ namespace ClassRoom
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClassRoomDB", Version = "v1" });
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-            });
-        }
-
-        private static void AddScope(IServiceCollection services)
-        {
-            services.AddScoped<ISmsService, SmsService>();
-            services.AddScoped<IRepository<ClerkEntity>, ClerkRepository>();
-            services.AddScoped<IAuthenticationDataProvider, AuthenticationDataProvider>();
-            services.AddScoped<IClerkDataProvider, ClerkDataProvider>();
-            services.AddControllers();
-        }
-
-        private void ConfigureContext(IServiceCollection services)
-        {
-            services.AddDbContext<ClerkContext>(o =>
-            {
-                o.UseSqlServer(Configuration["connectionStrings:ClassRoomDB"]);
             });
         }
 
@@ -102,6 +80,24 @@ namespace ClassRoom
                 endpoints.MapControllers();
             });
         }
+
+        private static void AddScope(IServiceCollection services)
+        {
+            services.AddScoped<ISmsService, SmsService>();
+            services.AddScoped<IRepository<ClerkEntity>, ClerkRepository>();
+            services.AddScoped<IAuthenticationDataProvider, AuthenticationDataProvider>();
+            services.AddScoped<IClerkDataProvider, ClerkDataProvider>();
+            services.AddControllers();
+        }
+
+        private void ConfigureContext(IServiceCollection services)
+        {
+            services.AddDbContext<ClerkContext>(o =>
+            {
+                o.UseSqlServer(Configuration["connectionStrings:ClassRoomDB"]);
+            });
+        }
+
     }
 
     public class MappingProfile : Profile
