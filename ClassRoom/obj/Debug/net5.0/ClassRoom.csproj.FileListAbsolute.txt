@@ -135,3 +135,6 @@ G:\MyProject\TestProject\ClassRoom\obj\Debug\net5.0\ClassRoom.RazorTargetAssembl
 G:\MyProject\TestProject\ClassRoom\obj\Debug\net5.0\ClassRoom.csproj.CopyComplete
 G:\MyProject\TestProject\ClassRoom\obj\Debug\net5.0\ClassRoom.genruntimeconfig.cache
 G:\MyProject\TestProject\ClassRoom\bin\Debug\net5.0\AutoMapper.dll
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\AutoMapper.dll
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\ApplicationService.dll
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\ApplicationService.pdb

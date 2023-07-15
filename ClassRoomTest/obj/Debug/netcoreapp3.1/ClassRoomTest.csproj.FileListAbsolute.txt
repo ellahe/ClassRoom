@@ -100,3 +100,9 @@ G:\MyProject\TestProject\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.pdb
 G:\MyProject\TestProject\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.genruntimeconfig.cache
 G:\MyProject\TestProject\ClassRoomTest\bin\Debug\netcoreapp3.1\Infrastructure.dll
 G:\MyProject\TestProject\ClassRoomTest\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.csprojAssemblyReference.cache
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.AssemblyInfoInputs.cache
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.AssemblyInfo.cs
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.csproj.CoreCompileInputs.cache
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.dll
+G:\MyProject\ClassRoom\ClassRoomTest\obj\Debug\netcoreapp3.1\ClassRoomTest.pdb

@@ -1,4 +1,4 @@
-<form [formGroup]="addClerkForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="clerkForm" (ngSubmit)="onSubmit()">
 
     <div  class="div-field">
         <label  class="label-field" for="firstname">First Name </label>
@@ -10,10 +10,10 @@
     </div>
 
     <div  class="div-field">
-        <label class="label-field" for="phoneNumber">PhoneNumber </label>
-        <input  class="input-field" type="text"  formControlName="phoneNumber">
-        <div *ngIf="addClerkForm.get('phoneNumber')?.touched">
-        <div *ngIf="addClerkForm?.get('phoneNumber')?.invalid">
+        <label class="label-field" for="mobileNumber">mobileNumber </label>
+        <input  class="input-field" type="text"  formControlName="mobileNumber">
+        <div *ngIf="clerkForm.get('mobileNumber')?.touched">
+        <div *ngIf="clerkForm?.get('mobileNumber')?.invalid">
             <span class="text-error">Required</span>
         </div>
     </div>
@@ -32,8 +32,8 @@
     <div  class="div-field">
         <label class="label-field" for="email">Email </label>
         <input   class="input-field" type="text"  formControlName="email"> 
-        <div *ngIf="addClerkForm.get('email')?.touched">
-            <div *ngIf=" addClerkForm.get('email')?.invalid">
+        <div *ngIf="clerkForm.get('email')?.touched">
+            <div *ngIf=" clerkForm.get('email')?.invalid">
                 <span class="text-error">Invalid</span>
             </div>
         </div>
@@ -41,5 +41,5 @@
     </div>
 
 
-    <button  class="div-field" [disabled]="addClerkForm.invalid" type="submit">Save</button>
+    <button  class="div-field" [disabled]="clerkForm.invalid" type="submit">Save</button>
 </form>

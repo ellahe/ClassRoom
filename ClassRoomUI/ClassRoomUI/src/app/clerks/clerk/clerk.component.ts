@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ClerkService } from './clerk.service';
 
 @Component({
   selector: 'app-clerk',
@@ -8,29 +9,30 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ClerkComponent implements OnInit {
 
-  addClerkForm: FormGroup = new FormGroup({});
+  clerkForm: FormGroup = new FormGroup({});
 
-  constructor() { }
+  constructor(private clerkService: ClerkService) { }
 
   ngOnInit(): void {
-    this.addClerkForm = new FormGroup({
+    this.clerkForm = new FormGroup({
       firstname: new FormControl('', [Validators.required]),
       lastname: new FormControl('', [Validators.required]),
       userName : new FormControl('', [Validators.required]),
       password : new FormControl('', [Validators.required]),
-      phoneNumber: new FormControl('', [Validators.required]),
+      mobileNumber: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 
 get email(){
-  return this.addClerkForm.controls['email'];
+  return this.clerkForm.controls['email'];
 }
 
   onSubmit() {
-    if (this.addClerkForm.valid) {
-      console.log(this.addClerkForm.value);
-      this.addClerkForm.reset();
+    if (this.clerkForm.valid) {
+      var clerkID= this.clerkService.add(this.clerkForm.value).subscribe();
+      console.log(this.clerkService.get(1).subscribe());
+      //this.clerkForm.reset();
       alert('Successful');
     }
     else

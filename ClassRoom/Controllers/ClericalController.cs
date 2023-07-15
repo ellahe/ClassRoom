@@ -1,10 +1,12 @@
-﻿using ApplicationService.DataProviders;
+﻿using System.Threading.Tasks;
+using ApplicationService.DataProviders;
 using ApplicationService.DTOS;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClassRoom.Controllers
 {
-    [Route("Clerk")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ClericalController : Controller
     {
@@ -16,15 +18,15 @@ namespace ClassRoom.Controllers
         private readonly IClerkDataProvider _clerkDataProvider;
 
         [HttpPost("Add")]
-        public void Add(ClerkDTO clerk)
+        public long Add(ClerkDTO clerk)
         {
-            _clerkDataProvider.Add(clerk);
+            return _clerkDataProvider.Add(clerk);
         }
 
         [HttpGet("Get")]
         public ClerkDTO Get(long id)
         {
-            return _clerkDataProvider.Get(id);
+          return _clerkDataProvider.Get(id);
         }
     }
 }

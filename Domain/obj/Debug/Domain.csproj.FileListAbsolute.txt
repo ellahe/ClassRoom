@@ -14,3 +14,7 @@ G:\MyProject\TestProject\Domain\obj\Debug\Domain.pdb
 G:\MyProject\TestProject\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
 G:\MyProject\TestProject\Domain\bin\Debug\Infrastructure.dll
 G:\MyProject\TestProject\Domain\bin\Debug\Infrastructure.pdb
+G:\MyProject\ClassRoom\Domain\bin\Debug\Infrastructure.dll
+G:\MyProject\ClassRoom\Domain\bin\Debug\System.ComponentModel.Annotations.dll
+G:\MyProject\ClassRoom\Domain\bin\Debug\Infrastructure.pdb
+G:\MyProject\ClassRoom\Domain\obj\Debug\Domain.csproj.CopyComplete

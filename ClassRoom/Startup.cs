@@ -1,18 +1,12 @@
 using System.Linq;
-using ApplicationService.Authentications;
 using ApplicationService.Common;
 using ApplicationService.DataProviders;
 using ApplicationService.DTOS;
-using ApplicationService.Users;
 using AutoMapper;
 using Domain.Domains;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
-using InfrastructureImplementation.Authentications;
 using InfrastructureImplementation.Clerk;
-using InfrastructureImplementation.ReaderRepositories;
-using InfrastructureImplementation.users;
-using InfrastructureImplementation.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +29,23 @@ namespace ClassRoom
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularOrigins",
+                builder =>
+                {
+                    builder.WithOrigins(
+                                        "http://localhost:4200"
+                                        )
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
+
+            // UseCors
+
+           
+
             ConfigureContext(services);
             AddScope(services);
 
@@ -58,38 +69,24 @@ namespace ClassRoom
         private static void AddScope(IServiceCollection services)
         {
             services.AddScoped<ISmsService, SmsService>();
-            services.AddScoped<ICrudRepository<AuthenticationEntity>, AuthenticationRepository>();
-            services.AddScoped<ICrudRepository<UserEntity>, UserRepository>();
             services.AddScoped<IRepository<ClerkEntity>, ClerkRepository>();
-            services.AddScoped<IReaderRepository<UserMinimal>, UserMinimalRepository>();
-            services.AddScoped<IReaderRepository<UserMinimal>, UserMinimalRepository>();
-            services.AddScoped<AssemblerBase<AuthenticationDTO, AuthenticationEntity>, AuthenticationAssembler>();
-            services.AddScoped<AssemblerBase<AuthenticationDTO, UserEntity>, UserAssembler>();
             services.AddScoped<IAuthenticationDataProvider, AuthenticationDataProvider>();
-            services.AddScoped<IUserDataProvider, UserDataProvider>();
             services.AddScoped<IClerkDataProvider, ClerkDataProvider>();
             services.AddControllers();
         }
 
         private void ConfigureContext(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(o =>
-            {
-                o.UseSqlServer(Configuration["connectionStrings:ClassRoomDB"]);
-            });
-            services.AddDbContext<AuthenticationContext>(o =>
-            {
-                o.UseSqlServer(Configuration["connectionStrings:ClassRoomDB"]);
-            });
             services.AddDbContext<ClerkContext>(o =>
             {
                 o.UseSqlServer(Configuration["connectionStrings:ClassRoomDB"]);
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("AllowAngularOrigins");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -98,11 +95,8 @@ namespace ClassRoom
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -112,13 +106,11 @@ namespace ClassRoom
 
     public class MappingProfile : Profile
     {
-
         public MappingProfile()
         {
             this.CreateMap<Entity, ClientDTO>();
             this.CreateMap<ClerkEntity, ClerkDTO>().ReverseMap();
         }
-
     }
 
 }
