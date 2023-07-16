@@ -1,15 +1,12 @@
 
 <!-- Toolbar -->
-
-<div class="toolbar" role="banner">
+<pre>{{ 'title' | json }}</pre>
   <div style="text-align:left">
-    <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+    <button mat-button [matMenuTriggerFor]="belowMenu">Menu</button>
     <mat-menu #belowMenu="matMenu" yPosition="below">
       <a [routerLink] = "'/addClerk'">Register clerk</a>
     </mat-menu> 
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
+   
   
 <!-- 
    <h2>
@@ -18,7 +15,6 @@
   
   
   <router-outlet></router-outlet>
-</div>
 
 
 

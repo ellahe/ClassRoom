@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClerkComponent } from './clerks/clerk/clerk.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-   {path: '', pathMatch: 'full', redirectTo: 'contacts'},
+   {path: '', pathMatch: 'full', redirectTo: 'home'},
+	 {path: 'home' , component: AppComponent},
 	 {path: 'addClerk' , component: ClerkComponent}
 ];
 
