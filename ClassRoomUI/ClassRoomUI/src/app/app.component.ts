@@ -9,14 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  private URL = './assets/dictionary.json';
-
 constructor(){
 }
 
   ngOnInit(): void {
-    fetch('./assets/dictionary.json').then(res => res.json())
-    .then(console.log); // do something with data
 
   }
 }

@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/crud-test-angular-latest'),
+      dir: require('path').join(__dirname, './coverage/classRoom-latest'),
       subdir: '.',
       reporters: [
         { type: 'html' },
