@@ -1,45 +1,64 @@
+<div>
+
 <form [formGroup]="clerkForm" (ngSubmit)="onSubmit()">
-
-    <div  class="div-field">
-        <label  class="label-field" for="firstname">First Name </label>
-        <input class="input-field" type="text"  formControlName="firstname">
-    </div>
-    <div  class="div-field">
-        <label class="label-field" for="lastname">Last Name </label>
-        <input  class="input-field" type="text"  formControlName="lastname">
-    </div>
-
-    <div  class="div-field">
-        <label class="label-field" for="mobileNumber">mobileNumber </label>
-        <input  class="input-field" type="text"  formControlName="mobileNumber">
-        <div *ngIf="clerkForm.get('mobileNumber')?.touched">
-        <div *ngIf="clerkForm?.get('mobileNumber')?.invalid">
-            <span class="text-error">Required</span>
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+            <label class="label-field" for="firstname">First Name </label>
+                <input class="input-field" type="text" formControlName="firstname">
         </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="label-field" for="lastname">Last Name </label>
+            <input class="input-field" type="text" formControlName="lastname">
+        </div>
+      </div>
     </div>
-
-    <div  class="div-field">
-        <label class="label-field" for="userName">userName </label>
-        <input  class="input-field" type="text"  formControlName="userName">
-    </div>
-
-    <div  class="div-field">
-        <label class="label-field" for="password">password </label>
-        <input  class="input-field" type="password"  formControlName="password">
-    </div>
-
-    </div>
-    <div  class="div-field">
+  
+    <!-- Email input -->
+    <div class="form-outline mb-4">
         <label class="label-field" for="email">Email </label>
-        <input   class="input-field" type="text"  formControlName="email"> 
+        <input class="input-field" type="text" formControlName="email">
         <div *ngIf="clerkForm.get('email')?.touched">
             <div *ngIf=" clerkForm.get('email')?.invalid">
                 <span class="text-error">Invalid</span>
             </div>
         </div>
-            
     </div>
-
-
-    <button  class="div-field" [disabled]="clerkForm.invalid" type="submit">Save</button>
-</form>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="label-field" for="userName">userName </label>
+        <input class="input-field" type="text" formControlName="userName">
+    </div>
+    <div class="form-outline mb-4">
+        <label class="label-field" for="password">password </label>
+        <input class="input-field" type="password" formControlName="password">
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+  
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>or sign up with:</p>
+      <button type="button" class="btn btn-secondary btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button type="button" class="btn btn-secondary btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button type="button" class="btn btn-secondary btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-secondary btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div>
+  </form>
+</div>
