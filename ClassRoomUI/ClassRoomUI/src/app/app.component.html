@@ -1,20 +1,6 @@
 
-<!-- Toolbar -->
-<pre>{{ 'title' | json }}</pre>
-  <div style="text-align:left">
-    <button mat-button [matMenuTriggerFor]="belowMenu">Menu</button>
-    <mat-menu #belowMenu="matMenu" yPosition="below">
-      <a [routerLink] = "'/addClerk'">Register clerk</a>
-    </mat-menu> 
-   
+<app-menu></app-menu>
   
-<!-- 
-   <h2>
-    <a [routerLink] = "'/addClerk'">Register clerk</a>
-  </h2> -->
-  
-  
-  <router-outlet></router-outlet>
-
+<router-outlet></router-outlet>
 
 

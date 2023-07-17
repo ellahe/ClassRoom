@@ -10,21 +10,21 @@ namespace ApplicationService.DataProviders
     {
         long Add(ClerkDTO clerkDTO);
         void Update(ClerkDTO clerkDTO);
-        ClerkDTO Get(long id);
+        ClerkDTO GetByUserNameAndPassword(string userName, string password);
     }
 
     public class ClerkDataProvider : IClerkDataProvider
     {
         public ClerkDataProvider(
             IMapper mapper,
-            IRepository<ClerkEntity> repository)
+            IClerkRepository repository)
         {
             _mapper = mapper;
             _repository = repository;
         }
 
         private readonly IMapper _mapper;
-        private readonly IRepository<ClerkEntity> _repository;
+        private readonly IClerkRepository _repository;
 
         public long Add(ClerkDTO clerkDTO)
         {
@@ -33,9 +33,9 @@ namespace ApplicationService.DataProviders
             return _repository.Add(poco);
         }
 
-        public ClerkDTO Get(long id)
+        public ClerkDTO GetByUserNameAndPassword(string userName, string password)
         {
-            var poco = _repository.Get(id);
+            var poco = _repository.GetByUserNameAndPassword(userName, password);
             return  _mapper.Map<ClerkEntity, ClerkDTO>(poco);
         }
 

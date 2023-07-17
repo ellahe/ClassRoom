@@ -21,10 +21,10 @@ namespace ClassRoom.Controllers
             return _clerkDataProvider.Add(clerk);
         }
 
-        [HttpGet("Get")]
-        public ClerkDTO Get(long id)
+        [HttpGet("GetByUserNameAndPassword")]
+        public ClerkDTO GetByUserNameAndPassword(string userName, string password)
         {
-          return _clerkDataProvider.Get(id);
+          return _clerkDataProvider.GetByUserNameAndPassword(userName, password);
         }
     }
 }

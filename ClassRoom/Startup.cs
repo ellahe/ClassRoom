@@ -84,7 +84,7 @@ namespace ClassRoom
         private static void AddScope(IServiceCollection services)
         {
             services.AddScoped<ISmsService, SmsService>();
-            services.AddScoped<IRepository<ClerkEntity>, ClerkRepository>();
+            services.AddScoped<IClerkRepository, ClerkRepository>();
             services.AddScoped<IAuthenticationDataProvider, AuthenticationDataProvider>();
             services.AddScoped<IClerkDataProvider, ClerkDataProvider>();
             services.AddControllers();
