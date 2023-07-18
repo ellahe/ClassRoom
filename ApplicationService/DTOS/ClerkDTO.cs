@@ -1,6 +1,4 @@
-﻿using ApplicationService.Common;
-
-namespace ApplicationService.DTOS
+﻿namespace ApplicationService.DTOS
 {
     public class ClerkDTO 
     {

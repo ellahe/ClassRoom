@@ -51,7 +51,10 @@
     <Compile Include="Domains\ClerkEntity.cs" />
     <Compile Include="Domains\Enums\Enums.cs" />
     <Compile Include="Domains\Entity.cs" />
+    <Compile Include="Interfaces\IInquiry.cs" />
+    <Compile Include="Interfaces\IValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\ClerkValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

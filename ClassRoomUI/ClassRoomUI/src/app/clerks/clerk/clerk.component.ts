@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClerkService } from './clerk.service';
 import { ClerkDTO } from 'src/app/DTOS/clerk-dto';
 import { ActivatedRoute } from '@angular/router';
+import { ErrorHappenedException } from 'src/app/Infrastructure/error-happened-exception';
 
 @Component({
   selector: 'app-clerk',
@@ -29,7 +30,7 @@ export class ClerkComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.clerkService.getByUserNameAndPassword(params.get('userName') ?? '' , params.get('password') ?? '').subscribe(
+      this.clerkService.getByUserNameAndPassword(params.get('userName') ?? '', params.get('password') ?? '').subscribe(
         (data: any) => {
           if (data != null && data.body != null) {
             this.clerk = data.body;
@@ -53,13 +54,22 @@ export class ClerkComponent implements OnInit {
 
   onSubmit() {
     if (this.clerkForm.valid) {
-      var clerkID = this.clerkService.add(this.clerkForm.value).subscribe();
-      console.log(this.clerkService.getByUserNameAndPassword("1", "2").subscribe());
-      this.clerkForm.reset();
-      alert('Successful');
-    }
+        var clerkID = this.clerkService.add(this.clerkForm.value).subscribe(
+          data => {
+            console.log(data);
+          },
+          err => {
+            throw err;
+          },
+      );}
     else
+    {
       alert('form is not valid');
+
+    }
   }
 
 }
+  // console.log(this.clerkService.getByUserNameAndPassword("1", "2").subscribe());
+      // this.clerkForm.reset();
+      // alert('Successful');

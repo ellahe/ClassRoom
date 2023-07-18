@@ -27,7 +27,16 @@
             </div>
         </div>
     </div>
-  
+    <div class="form-outline mb-4">
+        <label class="label-field" for="mobileNumber">Mobile Number </label>
+        <input class="input-field" type="text" formControlName="mobileNumber">
+        <div *ngIf="clerkForm.get('mobileNumber')?.touched">
+            <div *ngIf=" clerkForm.get('mobileNumber')?.invalid">
+                <span class="text-error">Invalid</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Password input -->
     <div class="form-outline mb-4">
         <label class="label-field" for="userName">userName </label>

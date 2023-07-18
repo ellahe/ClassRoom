@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Domain.Domains;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +29,11 @@ namespace InfrastructureImplementation.Clerk
         public ClerkEntity Get(long id)
         {
             return _context.ClerkEntity.FirstOrDefault(x => x.ID == id);
+        }
+
+        public List<ClerkEntity> GetAll()
+        {
+            return _context.ClerkEntity.ToList();
         }
 
         public ClerkEntity GetByUserNameAndPassword(string userName, string password)

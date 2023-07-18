@@ -13,5 +13,11 @@ namespace Infrastructure.Services
         }
         public string DetailMessage { get; internal set; }
 
+        public static void ThrowFromValidation(ValidatorResult validationResult)
+        {
+            if(!validationResult.Valid)
+            throw new ErrorHappenedException(validationResult.Message, validationResult.MessageDetail);
+        }
+
     }
 }

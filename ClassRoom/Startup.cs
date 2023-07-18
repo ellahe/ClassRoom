@@ -4,6 +4,7 @@ using ApplicationService.DataProviders;
 using ApplicationService.DTOS;
 using AutoMapper;
 using Domain.Domains;
+using Domain.Validators;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using InfrastructureImplementation.Clerk;
@@ -87,6 +88,7 @@ namespace ClassRoom
             services.AddScoped<IClerkRepository, ClerkRepository>();
             services.AddScoped<IAuthenticationDataProvider, AuthenticationDataProvider>();
             services.AddScoped<IClerkDataProvider, ClerkDataProvider>();
+            services.AddScoped<IClerkValidator, ClerkValidator>();
             services.AddControllers();
         }
 
