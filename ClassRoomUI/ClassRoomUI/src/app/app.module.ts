@@ -36,7 +36,7 @@ import { HeaderInterceptor } from './Infrastructure/headerInterceptor';
   providers: [
     ClerkService,
     ErrorHandleService,
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }  
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true } , 
     {provide:HTTP_INTERCEPTORS,useClass:ResponseInterceptor,multi:true}  
   ],
   bootstrap: [AppComponent]
