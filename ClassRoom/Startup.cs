@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Logging;
+using ClassRoom.Services;
 
 namespace ClassRoom
 {
@@ -62,7 +64,7 @@ namespace ClassRoom
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             app.UseCors("AllowAngularOrigins");
 
@@ -73,6 +75,17 @@ namespace ClassRoom
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ClassRoom v1"));
             }
 
+            app.Use(next =>
+            {
+                return async context =>
+                {
+                    logger.LogInformation("Incoming request");
+                    await next(context);
+                    logger.LogInformation("Outgoing response");
+                };
+            });
+
+            app.ConfigureExceptionHandler(logger);
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
@@ -81,6 +94,8 @@ namespace ClassRoom
                 endpoints.MapControllers();
             });
         }
+
+
 
         private static void AddScope(IServiceCollection services)
         {

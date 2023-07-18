@@ -1,5 +1,8 @@
-﻿using ApplicationService.DataProviders;
+﻿using System.Net.Http;
+using ApplicationService.DataProviders;
 using ApplicationService.DTOS;
+using ClassRoom.Services;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClassRoom.Controllers
@@ -18,6 +21,7 @@ namespace ClassRoom.Controllers
         [HttpPost("Add")]
         public long Add(ClerkDTO clerk)
         {
+            throw new System.Exception("khata dar samte server" );
             return _clerkDataProvider.Add(clerk);
         }
 

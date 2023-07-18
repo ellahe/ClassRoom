@@ -138,3 +138,6 @@ G:\MyProject\TestProject\ClassRoom\bin\Debug\net5.0\AutoMapper.dll
 G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\AutoMapper.dll
 G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\ApplicationService.dll
 G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\ApplicationService.pdb
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\MyProject\ClassRoom\ClassRoom\bin\Debug\net5.0\NLog.dll

@@ -4,6 +4,9 @@ namespace Infrastructure.Services
 {
     public class ErrorHappenedException : Exception
     {
+        public ErrorHappenedException()
+        {}
+
         public ErrorHappenedException(string message) : base(message)
         { }
 
