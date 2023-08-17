@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ClerkService } from './clerks/clerk/clerk.service';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorHandleService } from './Infrastructure/error-handle-service';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,18 @@ import { ErrorHandleService } from './Infrastructure/error-handle-service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [
     ClerkService,
-    ErrorHandleService,
-    { provide: ErrorHandler, useClass: ErrorHandleService },
+    // { provide: ErrorHandler, useClass: ErrorHandleService },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorHandleService,
+      multi: true
+    },
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent]
 })

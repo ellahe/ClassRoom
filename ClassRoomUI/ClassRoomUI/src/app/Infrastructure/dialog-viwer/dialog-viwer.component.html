@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Error occured</h1>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field>
+    <input matInput [(ngModel)]="dialogData.message">
+  </mat-form-field>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">OK</button>
+  <!-- <button mat-button [mat-dialog-close]="data.message" cdkFocusInitial>Ok</button> -->
+  </div>
