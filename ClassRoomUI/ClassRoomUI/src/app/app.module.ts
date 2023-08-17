@@ -13,8 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { ClerkService } from './clerks/clerk/clerk.service';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorHandleService } from './Infrastructure/error-handle-service';
-import { ResponseInterceptor } from './Infrastructure/ResponseInterceptor ';
-import { HeaderInterceptor } from './Infrastructure/headerInterceptor';
 
 @NgModule({
   declarations: [
@@ -36,8 +34,7 @@ import { HeaderInterceptor } from './Infrastructure/headerInterceptor';
   providers: [
     ClerkService,
     ErrorHandleService,
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true } , 
-    {provide:HTTP_INTERCEPTORS,useClass:ResponseInterceptor,multi:true}  
+    { provide: ErrorHandler, useClass: ErrorHandleService },
   ],
   bootstrap: [AppComponent]
 })

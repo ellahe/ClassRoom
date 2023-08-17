@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from "@angular/common/http";
 
-export class ErrorHappenedException extends HttpErrorResponse {
+export class ErrorDetails extends HttpErrorResponse {
 
     public detailMessage: string = '';
 

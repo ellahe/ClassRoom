@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using ApplicationService.DataProviders;
 using ApplicationService.DTOS;
 using ClassRoom.Services;
@@ -21,7 +22,7 @@ namespace ClassRoom.Controllers
         [HttpPost("Add")]
         public long Add(ClerkDTO clerk)
         {
-            throw new System.Exception("khata dar samte server" );
+            throw new Exception("khata dar samte server" );
             return _clerkDataProvider.Add(clerk);
         }
 

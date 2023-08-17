@@ -3,7 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { ClerkService } from './clerk.service';
 import { ClerkDTO } from 'src/app/DTOS/clerk-dto';
 import { ActivatedRoute } from '@angular/router';
-import { ErrorHappenedException } from 'src/app/Infrastructure/error-happened-exception';
+import { ErrorDetails } from 'src/app/Infrastructure/error-happened-exception';
 
 @Component({
   selector: 'app-clerk',
@@ -19,12 +19,20 @@ export class ClerkComponent implements OnInit {
     private clerkService: ClerkService,
     private route: ActivatedRoute) {
     this.clerkForm = new FormGroup({
-      firstname: new FormControl('', [Validators.required]),
-      lastname: new FormControl('', [Validators.required]),
-      userName: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      mobileNumber: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email])
+
+      firstname: new FormControl(''),
+      lastname: new FormControl(''),
+      userName: new FormControl(''),
+      password: new FormControl(''),
+      mobileNumber: new FormControl(''),
+      email: new FormControl('')
+
+      // firstname: new FormControl('', [Validators.required]),
+      // lastname: new FormControl('', [Validators.required]),
+      // userName: new FormControl('', [Validators.required]),
+      // password: new FormControl('', [Validators.required]),
+      // mobileNumber: new FormControl('', [Validators.required]),
+      // email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 

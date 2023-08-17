@@ -26,7 +26,8 @@ namespace ClassRoom.Services
                         logger.LogError($"Something went wrong: {contextFeature.Error}");
                         await context.Response.WriteAsync(new ErrorDetails(contextFeature.Error.Message)
                         {
-                            StatusCode = context.Response.StatusCode
+                            StatusCode = context.Response.StatusCode,
+                            DetailMessage = "detail Message of error"
                         }.ToString());
                     }
                 });
@@ -37,11 +38,14 @@ namespace ClassRoom.Services
     public class ErrorDetails  : Exception
     {
         public ErrorDetails(string message):base(message)
-        {
-
-        }
+        { }
 
         public int StatusCode { get; set; }
         public string DetailMessage { get; set; }
+
+        public override string ToString()
+        {
+            return DetailMessage;
+        }
     }
 }
