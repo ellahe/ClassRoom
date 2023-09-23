@@ -19,8 +19,14 @@ namespace ClassRoom.Controllers
         [HttpPost("Add")]
         public void Add(ClerkDTO clerk)
         {
-            throw new Exception("khata dar samte server" );
-            return _clerkDataProvider.Add(clerk);
+            //throw new Exception("khata dar samte server" );
+             _clerkDataProvider.Add(clerk);
+        }
+
+        [HttpPost("Update")]
+        public void Update(ClerkDTO clerk)
+        {
+            _clerkDataProvider.Update(clerk);
         }
 
         [HttpGet("GetByUserNameAndPassword")]

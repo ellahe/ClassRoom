@@ -1,73 +1,101 @@
-<div>
-
-<form [formGroup]="clerkForm" (ngSubmit)="onSubmit()">
-    <!-- 2 column grid layout with text inputs for the first and last names -->
-    <div class="row mb-4">
-      <div class="col">
-        <div class="form-outline">
-            <label class="label-field" for="firstname">First Name </label>
-                <input class="input-field" type="text" formControlName="firstname">
-        </div>
-      </div>
-      <div class="col">
-        <div class="form-outline">
-            <label class="label-field" for="lastname">Last Name </label>
-            <input class="input-field" type="text" formControlName="lastname">
-        </div>
-      </div>
-    </div>
+<div style=" width: 100%; ">  
   
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-        <label class="label-field" for="email">Email </label>
-        <input class="input-field" type="text" formControlName="email">
-        <div *ngIf="clerkForm.get('email')?.touched">
+  <div style=" width: 50%; height: 550px; float:left;">  
+    <picture style=" width: 50%; ">
+      <source srcset="../assets/img/signupPage.jpeg" type="image/webp">
+      <img mat-card-image src="../assets/img/signupPage.jpeg" alt="Photo of a Shiba Inu">
+    </picture>
+  </div>  
+
+  <div style=" width:50%;  float:left;">  
+    <form [formGroup] = "clerkForm" (ngSubmit) = "onSubmit()" style=" width: 50%; ">
+      <!-- <mat-form-field appearance = "standard">
+      <mat-label> Name </mat-label>
+      <input matInput maxlength = "15" inputmode = "tel" placeholder = "Type name" formControlName = "name" #nameInput>
+      </mat-form-field> -->
+      
+      
+        <!-- <mat-form-field>
+          <mat-label>Select</mat-label>
+          <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      
+        <mat-form-field >
+          <mat-label>First Name </mat-label>
+            <input matInput  formControlName="firstname">
+        </mat-form-field>
+      
+        <mat-form-field >
+          <mat-label>Last Name </mat-label>
+            <input matInput  formControlName="lastname">
+        </mat-form-field>
+      
+      
+        <!-- Email input -->
+      
+      
+        <mat-form-field >
+          <mat-label>Email</mat-label>
+          <input matInput  formControlName="email">
+          <div *ngIf="clerkForm.get('email')?.touched">
             <div *ngIf=" clerkForm.get('email')?.invalid">
-                <span class="text-error">Invalid</span>
+              <span class="text-error">Invalid</span>
             </div>
-        </div>
-    </div>
-    <div class="form-outline mb-4">
-        <label class="label-field" for="mobileNumber">Mobile Number </label>
-        <input class="input-field" type="text" formControlName="mobileNumber">
-        <div *ngIf="clerkForm.get('mobileNumber')?.touched">
+          </div>
+      </mat-form-field>
+      
+      
+      <mat-form-field >
+        <mat-label>Mobile Number </mat-label>
+          <input matInput  formControlName="mobileNumber">
+          <div *ngIf="clerkForm.get('mobileNumber')?.touched">
             <div *ngIf=" clerkForm.get('mobileNumber')?.invalid">
-                <span class="text-error">Invalid</span>
+              <span class="text-error">Invalid</span>
             </div>
+          </div>
+        </mat-form-field>
+      
+        <!-- Password input -->
+        <mat-form-field >
+          <mat-label>userName </mat-label>
+            <input matInput  formControlName="userName">
+      </mat-form-field>
+      
+      
+      <mat-form-field >
+        <mat-label>password </mat-label>
+          <input matInput  formControlName="password">
+      </mat-form-field>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+      
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>or sign up with:</p>
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button>
         </div>
-    </div>
+      </form>
+  </div>  
+</div>  
 
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-        <label class="label-field" for="userName">userName </label>
-        <input class="input-field" type="text" formControlName="userName">
-    </div>
-    <div class="form-outline mb-4">
-        <label class="label-field" for="password">password </label>
-        <input class="input-field" type="password" formControlName="password">
-    </div>
-  
-    <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-  
-    <!-- Register buttons -->
-    <div class="text-center">
-      <p>or sign up with:</p>
-      <button type="button" class="btn btn-secondary btn-floating mx-1">
-        <i class="fab fa-facebook-f"></i>
-      </button>
-  
-      <button type="button" class="btn btn-secondary btn-floating mx-1">
-        <i class="fab fa-google"></i>
-      </button>
-  
-      <button type="button" class="btn btn-secondary btn-floating mx-1">
-        <i class="fab fa-twitter"></i>
-      </button>
-  
-      <button type="button" class="btn btn-secondary btn-floating mx-1">
-        <i class="fab fa-github"></i>
-      </button>
-    </div>
-  </form>
-</div>
+ 
+
+

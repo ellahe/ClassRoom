@@ -12,13 +12,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   standalone: true,
   imports: [MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule],
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewDialog {
 
  public dialogData : DialogData = { message :'', detailMessage :''};
 
 counter : number = 0;
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    public dialogRef: MatDialogRef<DialogOverviewDialog>,
     @Inject(MAT_DIALOG_DATA) data: DialogData,
   ) { 
 

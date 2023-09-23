@@ -13,7 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { ClerkService } from './clerks/clerk/clerk.service';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorHandleService } from './Infrastructure/error-handle-service';
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card'; 
+import {MatGridList} from '@angular/material/grid-list'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +38,25 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule} from '@angular/m
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCardModule,
+  ],
+  exports:[
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [
     ClerkService,
@@ -41,7 +66,8 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule} from '@angular/m
       useClass: ErrorHandleService,
       multi: true
     },
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
   ],
   bootstrap: [AppComponent]
 })

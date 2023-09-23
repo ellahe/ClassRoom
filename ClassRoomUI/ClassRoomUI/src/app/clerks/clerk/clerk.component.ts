@@ -4,7 +4,6 @@ import { ClerkService } from './clerk.service';
 import { ClerkDTO } from 'src/app/DTOS/clerk-dto';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogOverviewExampleDialog } from 'src/app/Infrastructure/dialog-viwer/dialog-viwer.component';
 
 @Component({
   selector: 'app-clerk',
@@ -22,19 +21,12 @@ export class ClerkComponent implements OnInit {
     private dialog: MatDialog) {
     this.clerkForm = new FormGroup({
 
-      firstname: new FormControl(''),
-      lastname: new FormControl(''),
-      userName: new FormControl(''),
-      password: new FormControl(''),
-      mobileNumber: new FormControl(''),
-      email: new FormControl('')
-
-      // firstname: new FormControl('', [Validators.required]),
-      // lastname: new FormControl('', [Validators.required]),
-      // userName: new FormControl('', [Validators.required]),
-      // password: new FormControl('', [Validators.required]),
-      // mobileNumber: new FormControl('', [Validators.required]),
-      // email: new FormControl('', [Validators.required, Validators.email])
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      userName: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      mobileNumber: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 
@@ -67,9 +59,7 @@ export class ClerkComponent implements OnInit {
    
         var clerkID = this.clerkService.add(this.clerkForm.value).subscribe(
           data => {
-            console.log(data);
-            
-
+            this.clerkForm.reset();
           },
       );}
     else
@@ -82,5 +72,5 @@ export class ClerkComponent implements OnInit {
 
 }
   // console.log(this.clerkService.getByUserNameAndPassword("1", "2").subscribe());
-      // this.clerkForm.reset();
+      // 
       // alert('Successful');

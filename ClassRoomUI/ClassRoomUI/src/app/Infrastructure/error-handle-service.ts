@@ -1,7 +1,7 @@
 import { Injectable, ErrorHandler, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogOverviewExampleDialog } from './dialog-viwer/dialog-viwer.component';
+import { DialogOverviewDialog } from './dialog-viwer/dialog-viwer.component';
 import {
     HttpEvent,
     HttpHandler,
@@ -35,10 +35,10 @@ export class ErrorHandleService implements HttpInterceptor {
                         } else {
                             // server-side error
                             errorMessage = `Error Status: ${error.status}\nMessage: ${error.message}`;
-                            this.dialog.open(DialogOverviewExampleDialog, {
+                            // this.dialog.open(DialogOverviewDialog, {
 
-                                data: { message: errorMessage, detailMessage: 'detailMessage' }
-                            });
+                            //     data: { message: errorMessage, detailMessage: 'detailMessage' }
+                            // });
 
                         }
                     }
